@@ -461,19 +461,19 @@ console.log(test()); // Output: 10
 
 // console.log() sirf output print karta hai.
 
-function first() {
+function firstFunction() {
     console.log(10 + 20);
 }
 
-first(); // Output: 30
+firstFunction(); // Output: 30
 
 // return result ko function ke bahar deta hai.
 
-function second() {
+function secondFunction() {
     return 10 + 20;
 }
 
-let answer = second();
+let answer = secondFunction();
 
 console.log(answer); // Output: 30
 
@@ -891,14 +891,14 @@ console.log(found); // 18
 
 let prices = [100, 200, 300];
 
-let total = prices.reduce(function(sum, price) {
+let totalPrice = prices.reduce(function(sum, price) {
     return sum + price;
 }, 0);
 
 // 0 initial value hai.
 // Har round mein price, sum mein add hota hai.
 
-console.log(total); // 600
+console.log(totalPrice); // 600
 
 // ==========================================
 // 16. SPREAD OPERATOR
@@ -1362,21 +1362,21 @@ console.log(developer.skills);
 // 17. COPYING AN OBJECT
 // ==================================================
 
-let original = {
+let originalObj = {
     name: "Ibrahim",
     age: 14
 };
 
 // Spread syntax se ek shallow copy banayi.
-let copy = { ...original };
+let copyObj = { ...originalObj };
 
-copy.name = "Ali";
+copyObj.name = "Ali";
 
-console.log(original.name); // Ibrahim
-console.log(copy.name);     // Ali
+console.log(originalObj.name); // Ibrahim
+console.log(copyObj.name);     // Ali
 
-// original aur copy alag top-level objects hain.
-// Isliye copy.name change karne se original.name
+// originalObj aur copyObj alag top-level objects hain.
+// Isliye copyObj.name change karne se originalObj.name
 // change nahi hota.
 
 // IMPORTANT:
@@ -1420,10 +1420,10 @@ let studentInfo = {
 // Destructuring object ki properties ko
 // alag variables mein nikalti hai.
 
-let { name, age, class: studentClass } = studentInfo;
+let { name, age: studentAge, class: studentClass } = studentInfo;
 
 console.log(name);         // Ibrahim
-console.log(age);          // 14
+console.log(studentAge);   // 14
 console.log(studentClass); // 9
 
 // class JavaScript ka reserved keyword hai,
